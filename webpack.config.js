@@ -1,3 +1,6 @@
+// currently this repo is not connected to a server
+// use npm start to spin up the front end
+
 const path = require("path");
 
 module.exports = {
