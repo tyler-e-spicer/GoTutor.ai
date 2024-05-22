@@ -18,7 +18,6 @@ import newBoard from "../utils/board-functions";
 import findOpponentNeighbors from "../utils/find-neighbors";
 import isCaptured from "../utils/is-captured";
 import { forwardInTime, backInTime } from "../utils/time-travel";
-import handicapClick from "../utils/handicap";
 
 // accepts array of opponent stones and scans the groups looking for liberties (false) or
 
@@ -141,9 +140,7 @@ function GoBoard() {
     }
 
     setHistory(startingHistory);
-
     setCurrentMove(1);
-
     setHandicapLevel(handicapLevel + 1);
   }
 
