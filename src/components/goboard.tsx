@@ -20,20 +20,6 @@ import findOpponentNeighbors from "../utils/find-neighbors";
 import isCaptured from "../utils/is-captured";
 import { forwardInTime, backInTime } from "../utils/time-travel";
 
-// interfaces for props & state
-
-interface GoBoardState {
-  history: StarPoint[];
-  pastMoves: StarPoint[][];
-  currentMove: number;
-  whiteStones: string[];
-  blackStones: string[];
-  passCount: number;
-  handicapLevel: number;
-  blackCaptures: number;
-  whiteCaptures: number;
-}
-
 function GoBoard() {
   const [history, setHistory] = useState<StarPoint[]>(newBoard());
   const [pastMoves, setPastMoves] = useState<StarPoint[][]>([newBoard()]);

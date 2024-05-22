@@ -2,7 +2,12 @@ import { StarPoint } from "../../types";
 
 // can we make the param types dryer with overloading??
 
-export function backInTime(currentMove: number, pastMoves: any[], setHistory: (value: StarPoint[]) => void, setCurrentMove: (value: number) => void): void {
+export function backInTime(
+  currentMove: number,
+  pastMoves: any[],
+  setHistory: (value: StarPoint[]) => void,
+  setCurrentMove: (value: number) => void
+): void {
   console.log("invoking time travel");
   const pastMovesRef = [...pastMoves];
   console.log("pastMovesRef: ", pastMovesRef);
@@ -25,7 +30,12 @@ export function backInTime(currentMove: number, pastMoves: any[], setHistory: (v
   console.log("history ", history);
 }
 
-export function forwardInTime(currentMove: number, pastMoves: any[], setHistory: (value: StarPoint[]) => void, setCurrentMove: (value: number) => void): void {
+export function forwardInTime(
+  currentMove: number,
+  pastMoves: any[],
+  setHistory: (value: StarPoint[]) => void,
+  setCurrentMove: (value: number) => void
+): void {
   console.log("invoking time travel");
   const pastMovesRef = [...pastMoves];
   console.log("pastMovesRef: ", pastMovesRef);
