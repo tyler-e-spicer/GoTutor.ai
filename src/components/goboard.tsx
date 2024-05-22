@@ -88,11 +88,6 @@ function GoBoard() {
       }
     }
 
-    // console.log('history after for loop ', history);
-    // need to update white & black stone arrays
-    //update state once board has accounted for captures
-    // console.log("capturedResult length: ", capturedResult.length);
-
     if (blackIsNext && capturedResult) {
       setBlackCaptures(blackCaptures + capturedResult.length);
     } else if (!blackIsNext && capturedResult) {

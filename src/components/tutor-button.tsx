@@ -1,6 +1,7 @@
 import React from "react";
 
 // this will need to be built out for AI functionality
+// need to revisit with server connected 
 
 function TutorButton(): JSX.Element {
   const onHandleTutor = () => {
