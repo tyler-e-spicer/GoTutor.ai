@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { StarPoint } from "../../types";
 
 interface SaveButtonProps {
-  pastMoves: StarPoint[];
+  pastMoves: StarPoint[][];
   currentMove: number;
   blackIsNext: boolean;
 }

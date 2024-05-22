@@ -1,11 +1,8 @@
 import React from "react";
 
 // this will need to be built out for AI functionality
-interface TutorButtonProps {
-  callTutor: () => void;
-}
 
-function TutorButton({ callTutor }: TutorButtonProps): JSX.Element {
+function TutorButton(): JSX.Element {
   const onHandleTutor = () => {
     // once connected to server, ensure this contrsucts the insturctions object for the AI and and processes the response accordinly, display loading status until promise resolves
     const alertString =

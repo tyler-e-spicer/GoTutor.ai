@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 interface IntersectionProps {
   index: number;
-  stone: string;
+  stone: string | null;
   name: string;
   onIntersectionClick: () => void;
 }

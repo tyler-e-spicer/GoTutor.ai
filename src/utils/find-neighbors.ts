@@ -1,6 +1,10 @@
 import { StarPoint } from "../../types";
 
-export default function findOpponentNeighbors(board: StarPoint[], index: number, currentMove: number): Number[] {
+export default function findOpponentNeighbors(
+  board: StarPoint[],
+  index: number,
+  currentMove: number
+): number[] {
   const opponentNeighbors = [];
   const opponent = currentMove % 2 === 0 ? "⚫" : "⚪";
 

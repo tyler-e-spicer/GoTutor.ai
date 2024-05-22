@@ -1,11 +1,11 @@
 import React from "react";
 
 // this element was working but now seems tied to the passCount in state
-// This button should invoke the hc function in the parent and place handicapstones on the board 
-// boardstate/history should be updated accordingly 
+// This button should invoke the hc function in the parent and place handicapstones on the board
+// boardstate/history should be updated accordingly
 
 interface HandicapProps {
-  onHandicapClick: () => void
+  onHandicapClick: () => void;
 }
 
 function Handicap({ onHandicapClick }: HandicapProps): JSX.Element {
@@ -14,7 +14,7 @@ function Handicap({ onHandicapClick }: HandicapProps): JSX.Element {
   };
 
   return (
-    <button className="handicap-button" onClick={handicapAction}>
+    <button className="handicap-button" onClick={() => handicapAction()}>
       h+
     </button>
   );
