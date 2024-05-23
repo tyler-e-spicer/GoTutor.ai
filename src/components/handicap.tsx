@@ -9,13 +9,9 @@ interface HandicapProps {
 }
 
 function Handicap({ onHandicapClick }: HandicapProps): JSX.Element {
-  const handicapAction = () => {
-    console.log('In the handicap action function');
-    onHandicapClick();
-  };
 
   return (
-    <button className="handicap-button" onClick={() => handicapAction()}>
+    <button className="handicap-button" onClick={() => onHandicapClick()}>
       h+
     </button>
   );

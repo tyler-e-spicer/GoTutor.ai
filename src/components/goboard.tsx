@@ -18,7 +18,7 @@ import UserComponent from "./current-user";
 import newBoard from "../utils/board-functions";
 import findOpponentNeighbors from "../utils/find-neighbors";
 import isCaptured from "../utils/is-captured";
-import { forwardInTime, backInTime } from "../utils/time-travel";
+import { forwardInTime } from "../utils/time-travel";
 
 function GoBoard() {
   const [history, setHistory] = useState<StarPoint[]>(newBoard());
@@ -102,14 +102,13 @@ function GoBoard() {
     setPastMoves(pastMovesForUpdate);
   }
 
+  
   function handicapClick() {
     if (handicapLevel >= 9) return;
-
     const starIndices = [72, 288, 300, 60, 186, 174, 66, 294, 180];
     const startingHistory = history.slice(); // shallow copy
     startingHistory[starIndices[handicapLevel]].stone = "⚪";
     setHistory(startingHistory);
-    // setCurrentMove(1);
     setHandicapLevel(handicapLevel + 1);
     console.log(currentMove, handicapLevel, startingHistory);
   }
@@ -119,15 +118,17 @@ function GoBoard() {
       <div className="bg-image">
         <div className="go-board">
           <BackArrow
-            onBackClick={() =>
-              backInTime(currentMove, pastMoves, setHistory, setCurrentMove)
-            }
+            currentMove={currentMove}
+            pastMoves={pastMoves}
+            setHistory={setHistory}
+            setCurrentMove={setCurrentMove}
           />
           <StyleBGButton />
           <ForwardArrow
-            onForwardClick={() =>
-              forwardInTime(currentMove, pastMoves, setHistory, setCurrentMove)
-            }
+            currentMove={currentMove}
+            pastMoves={pastMoves}
+            setHistory={setHistory}
+            setCurrentMove={setCurrentMove}
           />
           <UserComponent
             whiteCaptures={whiteCaptures}
