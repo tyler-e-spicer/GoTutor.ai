@@ -10,6 +10,7 @@ interface HandicapProps {
 
 function Handicap({ onHandicapClick }: HandicapProps): JSX.Element {
   const handicapAction = () => {
+    console.log('In the handicap action function');
     onHandicapClick();
   };
 

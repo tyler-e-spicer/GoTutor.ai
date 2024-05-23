@@ -103,34 +103,15 @@ function GoBoard() {
   }
 
   function handicapClick() {
-    const starPoints = [
-      "Q16",
-      "D4",
-      "Q4",
-      "D16",
-      "Q10",
-      "D10",
-      "K16",
-      "K4",
-      "K10",
-    ];
+    if (handicapLevel >= 9) return;
 
     const starIndices = [72, 288, 300, 60, 186, 174, 66, 294, 180];
     const startingHistory = history.slice(); // shallow copy
-
-    for (const intersection of startingHistory) {
-      if (
-        intersection.name === starPoints[handicapLevel] &&
-        handicapLevel < starPoints.length
-      ) {
-        intersection.stone = "⚪";
-        console.log("intersection ", intersection);
-      }
-    }
-
+    startingHistory[starIndices[handicapLevel]].stone = "⚪";
     setHistory(startingHistory);
-    setCurrentMove(1);
+    // setCurrentMove(1);
     setHandicapLevel(handicapLevel + 1);
+    console.log(currentMove, handicapLevel, startingHistory);
   }
 
   return (
